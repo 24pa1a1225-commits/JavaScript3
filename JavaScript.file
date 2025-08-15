@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Concepts Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        pre {
+            background: #222;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .output {
+            background: white;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript Demo: Variables, Arrays, Functions, Objects, Loops</h1>
+
+<div class="output" id="output"></div>
+
+<script>
+// Helper function to print to the page
+function print(message) {
+    document.getElementById("output").innerHTML += message + "<br>";
+}
+
+// 1. VARIABLES
+let name = "Chaitanya";
+const age = 21;
+var isStudent = true;
+
+print("<b>Variables:</b>");
+print("Name: " + name);
+print("Age: " + age);
+print("Is Student: " + isStudent);
+print("<hr>");
+
+// 2. ARRAYS
+let fruits = ["Apple", "Banana", "Cherry"];
+print("<b>Arrays:</b>");
+print("Fruits array: " + fruits.join(", "));
+print("First fruit: " + fruits[0]);
+fruits.push("Mango");
+print("Updated fruits: " + fruits.join(", "));
+print("<hr>");
+
+// 3. FUNCTIONS
+function greet(personName) {
+    return "Hello, " + personName + "!";
+}
+print("<b>Functions:</b>");
+print(greet(name));
+
+const square = (num) => num * num;
+print("Square of 5: " + square(5));
+print("<hr>");
+
+// 4. OBJECTS
+let person = {
+    firstName: "Chaitanya",
+    lastName: "Mudagana",
+    age: 21,
+    skills: ["JavaScript", "Python", "AWS"],
+    greet: function() {
+        return `Hi, I'm ${this.firstName} ${this.lastName}.`;
+    }
+};
+
+print("<b>Objects:</b>");
+print("Person: " + JSON.stringify(person));
+print(person.greet());
+print("<hr>");
+
+// 5. LOOPS
+print("<b>Loops:</b>");
+print("For loop:");
+for (let i = 0; i < fruits.length; i++) {
+    print(`Fruit ${i + 1}: ${fruits[i]}`);
+}
+
+print("For...of loop:");
+for (let fruit of fruits) {
+    print(fruit);
+}
+
+print("While loop:");
+let count = 1;
+while (count <= 3) {
+    print("Count is: " + count);
+    count++;
+}
+
+</script>
+
+</body>
+</html>
